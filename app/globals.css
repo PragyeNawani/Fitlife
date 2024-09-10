@@ -2,26 +2,237 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+}
+/* Navbar */
+@media screen and (min-width:1280px) {
+  .navscroll{
+    min-height: 132px;
+    background-color: white;
+    animation: navscrollslide 0.7s ease-in-out forwards;
+  }
+  @keyframes navscrollslide {
+    from{
+      opacity: 0;
+      transform: translateY(-112px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0px);
+    }  
+  }
+}
+.naventry{
+  animation: naventer 0.5s ease forwards;
+}
+@keyframes naventer {
+  from{
+    transform: translateY(100%);
+  }
+  to{
+    transform: translateY(0%);
+  }
+  
+}
+.topbtn{
+  animation: topscroll 0.7s ease-in-out   forwards;
+}
+@keyframes topscroll {
+  from{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  
+}
+/* Home Section */
+.homebg{
+  background: url("https://4kwallpapers.com/images/wallpapers/dark-background-abstract-background-network-3d-background-3840x2160-8324.png") no-repeat center center/cover;
+  background-attachment: fixed;
+}
+.homecontainer::after{
+  content: "";
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 500px;
+  background-color: orangered;
+  top: 0;
+  right: 0;
+}
+.homecontainer::before{
+  content: "";
+  position: absolute;
+  z-index: 1;
+  height: 100px;
+  width: 600px;
+  background-color: orangered;
+  top: 0;
+  left: 20px;
+  border-bottom-left-radius: 300px;
+  border-bottom-right-radius: 300px;
+  filter: blur(200px);
+}
+.herocircleone{
+  aspect-ratio: 1;
+}
+.animatespin {
+  animation: spinher 10s infinite forwards;
+}
+.animatespin2 {
+  animation: spinher2 10s infinite forwards;
+}
+@keyframes spinher {
+
+  to{
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes spinher2 {
+
+  to{
+    transform: rotateZ(-360deg);
+  }
+}
+.heartratecard{
+  animation: heartrate 3s linear infinite alternate-reverse ;
+}
+@keyframes heartrate {
+  0%{
+    top: 47%;
+    left: 70%;
+  }
+  50%{
+    top: 49%;
+    left: 69%;
+  }
+  100%{
+    top: 51%;
+    left:71%;
+  }
+  
+}
+.caloriescard{
+  animation: calorie 3s linear infinite alternate-reverse ;
+}
+@keyframes calorie {
+  0%{
+    top: 77%;
+    left: 5%;
+  }
+  50%{
+    top: 79%;
+    left: 3%;
+  }
+  100%{
+    top: 81%;
+    left: 5%;
+  }
+  
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* About US */
+.aboutcircleone{
+  /* aspect-ratio: auto; */
+  width: auto;
+  height: auto;
+}
+.fitnessimgbg{
+  font-size: 150px;
+  opacity: 0.1;
+  color: white;
+  animation: bouncefit 3s linear infinite forwards;
+  position: relative;
+}
+@keyframes bouncefit {
+  0%{
+    bottom: 0px;
   }
+  15%{
+    bottom: 30px;
+  }
+  25%{
+    bottom: 0px;
+  }
+  35%{
+    bottom: 15px;
+  }
+  45%{
+    bottom: 0px;
+  }
+  100%{
+    bottom: 0px;
+  }
+  
+}
+/* Video banner section  */
+.videobanner::before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-color: black;
+  opacity: 0.2;
+  height: 550px;
+  width: 1200px;
+  z-index: 1;
+  border-radius: 12px;
+}
+.playani{
+  animation: playbtn 2s ease-out  infinite forwards;
+}
+@keyframes playbtn {
+  from{
+    transform: scale(1);
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  
+}
+/* Classes Section  */
+.classessect{
+  background: url("https://4kwallpapers.com/images/wallpapers/dark-background-abstract-background-network-3d-background-3840x2160-8324.png") no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+/* Contact Section  */
+.contactsect{
+  background: url("https://4kwallpapers.com/images/wallpapers/dark-background-abstract-background-network-3d-background-3840x2160-8324.png") no-repeat center center/cover;
+  background-attachment: fixed;
+}
+.contactlinksect{
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset:10px;
+  text-decoration-color: orangered;
+}
+.slidei{
+  transform: translate(0px);
+  transition: all 1s ease-in-out;
+}
+.slidex{
+  transform: translate(-380px);
+  transition: all 1s ease-in-out;
+}
+.transi{
+  transform: translate(0px);
+  transition: all 1s ease-in-out;
+}
+.transx{
+  transform: translate(50px);
+  transition: all 1s ease-in-out;
 }

@@ -1,38 +1,8 @@
 "use client"
-import Homesect from "@/components/Home";
-import Navbar from "@/components/Navbar";
-import Aboutus from "@/components/Aboutus";
-import Videoshowcase from "@/components/Videoshowcase";
-import Classes from "@/components/Classes";
-import News from "@/components/News";
-import Contactus from "@/components/Contactus";
-import Footer from "@/components/Footer";
-import { Scrollactivecontext } from '@/Context/context'
-import { useState } from "react";
-import { useRef } from 'react'
-import { useContext } from 'react'
-import { useEffect } from 'react'
-import Link from "next/link";
-
-export default function Home() {
-    const [scrollactive, setscrollactive] = useState(false)
-    const myRef = useRef()
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries)=>{
-            const entry = entries[0]
-            console.log(entry)
-            if (entry.isIntersecting) {setscrollactive(false)}
-            else{setscrollactive(true)}
-        })
-        observer.observe(myRef.current)
-        
-    }, [])
-  return (
-    <>
-      <Scrollactivecontext.Provider value={scrollactive}>
-        <Navbar />
+import React from 'react'
+const Home = () => {
+    return (
         <section id="home" className='h-[100vh] xl:h-[100vh] homesect w-[100%] homebg overflow-hidden pb-[10px] xl:pb-[0]'>
-          <div ref={myRef} className="absolute top-[200px] left-0"></div>
             <div className="xl:homecontainer flex overflow-hidden w-[100%] h-[100%]">
                 <div className="flex h-[100%] w-[300px] md:w-[500px] xl:w-[1200px] mx-auto gap-16 xl:flex-row flex-col pt-[180px] xl:pt-0">
                     <div className="homeleftside w-[300px] xl:w-[700px] h-[400px] md:h-[500px] md:w-[500px] md:mx-auto xl:mx-0 xl:h-[600px] flex flex-col gap-5 self-end">
@@ -72,22 +42,14 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <Link href="#home">
                 <div className={`fixed bottom-[30px] right-[30px] bg-[#ff4500] px-[10px] border-2 border-black pb-[15px] pt-[6px] rounded-full ${scrollactive ? "block topbtn" : "hidden"}`}>
                     <div className="w-[20px] h-[20px]">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8l256 0c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z" /></svg>
                     </div>
                 </div>
-                </Link>
             </div>
         </section>
-        <Aboutus/>
-        <Videoshowcase />
-        <Classes />
-        <News />
-        <Contactus />
-        <Footer />
-      </Scrollactivecontext.Provider>
-    </>
-  );
+    )
 }
+
+export default Home
