@@ -31,10 +31,10 @@ export default function Home() {
     <>
       <Scrollactivecontext.Provider value={scrollactive}>
         <Navbar />
-        <section id="home" className='min-h-[100vh] xl:h-[100vh] homesect w-[100%] homebg overflow-hidden pb-[10px] xl:pb-[0]'>
+        <section id="home" className='h-[100vh] xl:h-[100vh] homesect w-[100%] homebg overflow-hidden pb-[10px] xl:pb-[0]'>
           <div ref={myRef} className="absolute top-[200px] left-0"></div>
             <div className="xl:homecontainer flex overflow-hidden w-[100%] h-[100%]">
-                <div className="flex h-[100%] w-[300px] md:w-[500px] xl:w-[1200px] mx-auto gap-16 xl:flex-row flex-col pt-[180px]">
+                <div className="flex h-[100%] w-[300px] md:w-[500px] xl:w-[1200px] mx-auto gap-16 xl:flex-row flex-col pt-[180px] xl:pt-0">
                     <div className="homeleftside w-[300px] xl:w-[700px] h-[400px] md:h-[500px] md:w-[500px] md:mx-auto xl:mx-0 xl:h-[600px] flex flex-col gap-5 self-end">
                         <div className="head bg-gray-800 p-2 rounded-xl flex h-fit w-fit mx-auto xl:mx-0">
                             <div className='bg-orange-600 p-2 rounded-lg text-lg md:text-xl xl:text-2xl text-white'>
