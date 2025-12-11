@@ -1,0 +1,348 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+@media screen and (min-width:1280px) {
+  .navscroll{
+    min-height: 132px;
+    background-color: white;
+    animation: navscrollslide 0.7s ease-in-out forwards;
+  }
+  @keyframes navscrollslide {
+    from{
+      opacity: 0;
+      transform: translateY(-112px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0px);
+    }  
+  }
+}
+.naventry{
+  animation: naventer 0.5s ease forwards;
+}
+@keyframes naventer {
+  from{
+    transform: translateY(100%);
+  }
+  to{
+    transform: translateY(0%);
+  }
+  
+}
+.topbtn{
+  animation: topscroll 0.7s ease-in-out forwards;
+}
+@keyframes topscroll {
+  from{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  
+}
+
+/* Home Section */
+.homebg{
+  background: url("https://4kwallpapers.com/images/wallpapers/dark-background-abstract-background-network-3d-background-3840x2160-8324.png") no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+@media screen and (max-width: 1279px) {
+  .homebg {
+    background-attachment: scroll;
+  }
+}
+
+.homecontainer::after{
+  content: "";
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 500px;
+  background-color: orangered;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 1279px) {
+  .homecontainer::after {
+    display: none;
+  }
+}
+
+.homecontainer::before{
+  content: "";
+  position: absolute;
+  z-index: 1;
+  height: 100px;
+  width: 600px;
+  background-color: orangered;
+  top: 0;
+  left: 20px;
+  border-bottom-left-radius: 300px;
+  border-bottom-right-radius: 300px;
+  filter: blur(200px);
+}
+
+@media screen and (max-width: 1279px) {
+  .homecontainer::before {
+    display: none;
+  }
+}
+
+.herocircleone{
+  aspect-ratio: 1;
+}
+.animatespin {
+  animation: spinher 10s infinite forwards;
+}
+.animatespin2 {
+  animation: spinher2 10s infinite forwards;
+}
+@keyframes spinher {
+  to{
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes spinher2 {
+  to{
+    transform: rotateZ(-360deg);
+  }
+}
+
+.heartratecard{
+  animation: heartrate 3s linear infinite alternate-reverse;
+}
+@keyframes heartrate {
+  0%{
+    top: 47%;
+    left: 70%;
+  }
+  50%{
+    top: 49%;
+    left: 69%;
+  }
+  100%{
+    top: 51%;
+    left:71%;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  @keyframes heartrate {
+    0%{
+      top: 10%;
+      right: 5%;
+    }
+    50%{
+      top: 12%;
+      right: 3%;
+    }
+    100%{
+      top: 14%;
+      right: 5%;
+    }
+  }
+  .heartratecard {
+    left: auto !important;
+  }
+}
+
+.caloriescard{
+  animation: calorie 3s linear infinite alternate-reverse;
+}
+@keyframes calorie {
+  0%{
+    top: 77%;
+    left: 5%;
+  }
+  50%{
+    top: 79%;
+    left: 3%;
+  }
+  100%{
+    top: 81%;
+    left: 5%;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  @keyframes calorie {
+    0%{
+      bottom: 15%;
+      left: 5%;
+    }
+    50%{
+      bottom: 17%;
+      left: 3%;
+    }
+    100%{
+      bottom: 19%;
+      left: 5%;
+    }
+  }
+  .caloriescard {
+    top: auto !important;
+  }
+}
+
+/* About US */
+.aboutcircleone{
+  width: auto;
+  height: auto;
+}
+.fitnessimgbg{
+  font-size: 150px;
+  opacity: 0.1;
+  color: white;
+  animation: bouncefit 3s linear infinite forwards;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .fitnessimgbg {
+    font-size: 80px;
+  }
+}
+
+@keyframes bouncefit {
+  0%{
+    bottom: 0px;
+  }
+  15%{
+    bottom: 30px;
+  }
+  25%{
+    bottom: 0px;
+  }
+  35%{
+    bottom: 15px;
+  }
+  45%{
+    bottom: 0px;
+  }
+  100%{
+    bottom: 0px;
+  }
+}
+
+/* Video banner section  */
+.videobanner::before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-color: black;
+  opacity: 0.2;
+  height: 550px;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 1;
+  border-radius: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .videobanner::before {
+    height: 230px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+  .videobanner::before {
+    height: 400px;
+  }
+}
+
+.playani{
+  animation: playbtn 2s ease-out infinite forwards;
+}
+@keyframes playbtn {
+  from{
+    transform: scale(1);
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+/* Classes Section  */
+.classessect{
+  background: url("https://4kwallpapers.com/images/wallpapers/dark-background-abstract-background-network-3d-background-3840x2160-8324.png") no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+@media screen and (max-width: 1279px) {
+  .classessect {
+    background-attachment: scroll;
+  }
+}
+
+/* Contact Section  */
+.contactsect{
+  background: url("https://4kwallpapers.com/images/wallpapers/dark-background-abstract-background-network-3d-background-3840x2160-8324.png") no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+@media screen and (max-width: 1279px) {
+  .contactsect {
+    background-attachment: scroll;
+  }
+}
+
+.contactlinksect{
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset:10px;
+  text-decoration-color: orangered;
+}
+
+.slidei{
+  transform: translate(0px);
+  transition: all 1s ease-in-out;
+}
+.slidex{
+  transform: translate(-380px);
+  transition: all 1s ease-in-out;
+}
+
+@media screen and (max-width: 1279px) {
+  .slidex {
+    transform: translate(-400px);
+  }
+}
+
+.transi{
+  transform: translate(0px);
+  transition: all 1s ease-in-out;
+}
+.transx{
+  transform: translate(50px);
+  transition: all 1s ease-in-out;
+}
+
+/* Additional responsive fixes */
+@media screen and (max-width: 640px) {
+  section {
+    overflow-x: hidden;
+  }
+}
