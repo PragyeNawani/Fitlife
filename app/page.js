@@ -33,8 +33,8 @@ export default function Home() {
         <Navbar />
         <section id="home" className='min-h-screen homesect w-full homebg overflow-hidden pb-2.5 xl:pb-0'>
           <div ref={myRef} className="absolute top-[200px] left-0"></div>
-            <div className="xl:homecontainer flex overflow-hidden w-full h-full">
-                <div className="flex h-full w-full max-w-[300px] md:max-w-[500px] xl:max-w-[1200px] mx-auto gap-8 md:gap-12 xl:gap-16 xl:flex-row flex-col pt-32 md:pt-40 xl:pt-0 px-4 md:px-0">
+            <div className="xl:homecontainer flex overflow-hidden w-full min-h-screen">
+                <div className="flex h-full w-full max-w-[300px] md:max-w-[500px] xl:max-w-[1200px] mx-auto gap-8 md:gap-12 xl:gap-16 xl:flex-row flex-col pt-32 md:pt-40 xl:pt-0 px-4 md:px-0 mt-auto">
                     <div className="homeleftside w-full max-w-[300px] xl:max-w-[700px] h-auto md:h-auto md:max-w-[500px] md:mx-auto xl:mx-0 xl:h-[600px] flex flex-col gap-4 md:gap-5 self-end">
                         <div className="head bg-gray-800 p-2 rounded-xl flex h-fit w-fit mx-auto xl:mx-0">
                             <div className='bg-orange-600 p-2 rounded-lg text-base md:text-lg xl:text-2xl text-white'>
